@@ -10,27 +10,27 @@
   <body>
     <!-- Top Page -->
     <header>
-      <div class="high-score">
+      <div class="view-high-score">
         <a href="#">View High Score</a>
       </div>
       <div class="timer" id="timer">
         <h3>Time:</h3>
       </div>
     </header>
-    <main>
+    <main class="container">
       <!-- Start Quiz -->
-      <div class="start-quiz-section">
+      <div class="start-quiz">
         <h1>Coding Quiz Challenge</h1>
         <p>
           This is a time base quiz you have 60 seconds to answer the questions.
           Note, every incorrect answer decreases your time by ten seconds.
         </p>
-        <button type="start" class="startBtn">Start Quiz</button>
+        <button type="start" class="start">Start Quiz</button>
       </div>
       <!-- Question Section -->
-      <div class="quiz-section">
+      <div class="quiz">
         <h3>
-          Question: <span class="quiz-title" id="quiz-title"></span>
+           <span class="quiz-title" id="quiz-title"></span>
         </h3>
         <div class="answer-buttons"></div>
         <div class="alert-user"></div>
@@ -50,7 +50,7 @@
         </div>
       </div>
       <!-- High Score Section -->
-      <div class="high-score-section">
+      <div class="saved-high-score">
         <h1>High Scores</h1>
         <ol id="highscores"></ol>
         <button id="clear"> Clear High Scores</button>

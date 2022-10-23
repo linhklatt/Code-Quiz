@@ -1,12 +1,13 @@
+// questions array
 var questions = [
   {
-    question: "Commonly used data types do not include:",
-    answer: "Hyper Text Markup Language",
+    showQuestion: "Commonly used data types do not include:",
+    correctAnswer: "Hyper Text Markup Language",
     options: ["booleans", "numbers", "strings", "Hyper Text Markup Language"],
   },
   {
-    question: "The condition inside an if/else statement is stored inside:",
-    answer: "parentheses",
+    showQuestion: "The condition inside an if/else statement is stored inside:",
+    correctAnswer: "parentheses",
     options: [
       "parentheses",
       "curly brackets",
@@ -15,53 +16,68 @@ var questions = [
     ],
   },
   {
-    question: "Arrays in JavaScript can be used to store:",
-    answer: "all of the above",
+    showQuestion: "Arrays in JavaScript can be used to store:",
+    correctAnswer: "all of the above",
     options: ["strings", "arrays", "numbers", "all of the above"],
   },
   {
-    question:
+    showQuestion:
       "String values must be enclosed within __ when being assigned to variables.",
-    answer: "quotes",
+    correctAnswer: "quotes",
     options: ["question marks", "quotes", "square brackets", "parentheses"],
   },
   {
-    question:
+    showQuestion:
       "A very useful tool used during development and debugging for printing content to the debugger is:",
-    answer: "console.log",
+    correctAnswer: "console.log",
     options: ["for loops", "terminal/bash", "JavaScript", "console.log()"],
   },
 ];
+//
+var startQuizEl = document.querySelector(".start-quiz");
+var timerEl = document.querySelector(".timer");
+var quizText = document.querySelector(".quiz");
+var quizEl = document.querySelector(".quiz-title");
+var choiceEl = document.querySelector(".answer-buttons");
+var alertUserEl = document.querySelector(".alert-user");
+var resultEl = document.querySelector(".result");
+var correctAnswerEl = document.querySelector(".correct-answer");
+var viewHighScoreEl = document.querySelector(".view-high-score");
+var userInitialEl = document.querySelector(".user-initial");
+var submitBtnEl = document.querySelector(".submitBtn");
+var savedHighScoreEl = document.querySelector(".saved-high-score");
+var highScoresEl = document.querySelector("#highscores");
+var clearHighScoresEl = document.querySelector("#clear");
+var goBackEl = document.querySelector("#go-back");
 
-var startBtn = document.querySelector(".start-quiz");
-var startSection = document.querySelector(".start-section");
-var quizSection = document.querySelector(".quiz-section");
-var timer = document.querySelector("#timer");
-var finishSection = document.querySelector(".finish-section");
-
-var secondsLeft = 45;
-var score;
+var questionIndex = 0;
+var timeLeft = 60;
+var correctAnsCount = 0;
+var userInitial = "";
+var timeInterval;
 
 // Set time for Timer section
-function timer() {
-  var timerInterval = setInterval(function () {
-    secondsLeft--;
-    timer.textContent = "Time: " + secondsLeft;
-    if (secondsLeft === 0) {
-      clearInterval(timerInterval);
-      score = 0;
-      quizSection.classList.add("hidden");
-      finishBox.classList.remove("hidden");
-    } else if (secondsLeft <= 0) {
-      secondsLeft = 0;
-      score = 0;
-      timer.textContent = "Time: " + secondsLeft;
-      quizSection.classList.add("hidden");
-      finishSection.classList.remove("hidden");
+function time() {
+  var timeInterval = setInterval(function () {
+    timeLeft--;
+    timerEl.textContent = "Time:  " + timeLeft;
+
+    if (timeLeft <= 0) {
+      clearInterval(timeInterval);
+      alertUserEl.textContent = "Quiz Ended";
+      timerEl.textContent = "Time is stopped";
+      quizEl.style.display = "none";
+      resultEl.style.display = "block";
     }
   }, 1000);
 }
+
 // Start button function
-startBtn.addEventListener("click", function () {
-  startSection.classList.add("hidden");
+startQuizEl.addEventListener("click", function () {
+  startQuizEl.style.display = "none";
+  viewHighScoreEl.style.display = "none";
+
+  time();
 });
+
+// show the question
