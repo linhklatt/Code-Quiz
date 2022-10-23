@@ -4,27 +4,61 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Code Quiz</title>
     <link rel="stylesheet" href="assets/css/style.css" />
+    <title>Code Quiz</title>
   </head>
   <body>
     <!-- Top Page -->
     <header>
-      <li id="high-score">View High Scores</li>
-      <li id="timer">Time:</li>
-    </header>
-    <!-- Start Quiz -->
-    <div class="start-section">
-      <h1 class="coding-tittle">Coding Quiz Challenge</h1>
-      <div class="instruction">
-        Try to answer the following code-related questions within the time
-        limit. Keep in mind that incorrect answers will penalize your score time
-        by ten seconds!
+      <div class="high-score">
+        <a href="#">View High Score</a>
       </div>
-      <!-- Start Button -->
-      <div class="startBtn">Start</div>
-    </div>
+      <div class="timer" id="timer">
+        <h3>Time:</h3>
+      </div>
+    </header>
+    <main>
+      <!-- Start Quiz -->
+      <div class="start-quiz-section">
+        <h1>Coding Quiz Challenge</h1>
+        <p>
+          This is a time base quiz you have 60 seconds to answer the questions.
+          Note, every incorrect answer decreases your time by ten seconds.
+        </p>
+        <button type="start" class="startBtn">Start Quiz</button>
+      </div>
+      <!-- Question Section -->
+      <div class="quiz-section">
+        <h3>
+          Question: <span class="quiz-title" id="quiz-title"></span>
+        </h3>
+        <div class="answer-buttons"></div>
+        <div class="alert-user"></div>
+        <!-- Correct or Wrong answer section -->
+        <div class="result">
+          <h3></h3>
+          <div class="correct-answer"></div>
+          <div class="initial">
+            <h4>Initial</h4>
+            <input
+              type="text"
+              class="user-innital"
+              placeholder="Please type your initials"
+            />
+            <div><button class="submitBtn">Submit</button></div>
+          </div>
+        </div>
+      </div>
+      <!-- High Score Section -->
+      <div class="high-score-section">
+        <h1>High Scores</h1>
+        <ol id="highscores"></ol>
+        <button id="clear"> Clear High Scores</button>
+        <button id="go-back"> Go Back</button>
 
+      </div>
+      </div>
+    </main>
     <script src="assets/js/script.js"></script>
   </body>
 </html>

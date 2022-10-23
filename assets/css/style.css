@@ -1,16 +1,37 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  list-style-type: none;
 }
-#high-score {
-  padding-left: 5px;
+a {
+  text-decoration: none;
+}
+a:hover {
+  padding: 5px;
 }
 #timer {
-  padding-right: 40px;
+  right: 15px;
+  font-size: 20px;
+  padding-right: 35px;
+  position: absolute;
 }
-.start-section {
+.high-score {
+  box-sizing: border-box;
+  font-size: 20px;
+}
+.start-quiz-section p {
+  text-align: start;
+  padding: 20px 10px 25px 10px;
+}
+
+.start-quiz-section,
+.quiz-section,
+.high-score-section {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -20,15 +41,74 @@ header {
   transform: translate(-50%, -50%);
   position: absolute;
 }
-.instruction {
+.correct-answer {
+  font-size: 18px;
   text-align: center;
-  margin-bottom: 20px;
+  padding-top: 10px;
 }
-.startBtn {
+.startBtn,
+.submitBtn {
+  font-weight: bold;
+  height: 30px;
+  width: 100px;
+  border: 1px solid #ead4b8;
+  border-radius: 5px;
+  margin: 10px auto;
   background-color: #351c75;
-  border-radius: 25px;
-  margin-left: 10px;
-  padding: 5px 30px;
+  font-size: 18px;
+  color: rgb(196, 174, 133);
+}
+.result,
+.high-score-section {
+  display: none;
+}
+.startBtn :hover,
+.answer-button:hover,
+.submitBtn:hover {
+  opacity: 0.8;
+  border: 2px solid rgb(196, 174, 133);
+}
+.answer-buttons {
+  display: flex;
+  flex-direction: column;
+  margin: 25px 160px 5px 160px;
+}
+.alert-user {
   font-size: 20px;
-  color: white;
+  padding: 10px;
+}
+.correct-answer {
+  font-size: 18px;
+  text-align: center;
+  padding-top: 10px;
+}
+.initial {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  margin: 10px auto;
+  font-size: 18px;
+}
+
+.initial h4 {
+  padding: 10px;
+}
+
+.user-initial {
+  font-size: 16px;
+  height: 28px;
+}
+#clear,
+#go-back {
+  padding: 10px;
+  font-weight: bold;
+  background-color: rgb(196, 174, 133);
+  border-radius: 5px;
+  margin: 5px;
+}
+
+#clear:hover,
+#go-back:hover {
+  opacity: 0.8;
+  border: 2px solid rgb(196, 174, 133);
 }
