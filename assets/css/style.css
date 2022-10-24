@@ -9,8 +9,7 @@ body {
     "Lucida Sans", Arial, sans-serif;
   background-image: url(https://images.unsplash.com/photo-1553095066-5014bc7b7f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80);
   background-position: top;
-
-  color: rgb(218, 209, 209);
+  color: rgb(206, 140, 18);
 }
 
 a {
@@ -18,28 +17,23 @@ a {
   text-decoration: none;
 }
 
-header {
-  display: flex;
-  justify-content: space-between;
-  font-weight: bold;
-  font-size: 16px;
-}
-
-.start-quiz p {
-  display: flex;
+.startQuiz p {
+  text-align: start;
   padding: 20px 10px 25px 10px;
 }
 
-a:hover {
-  padding: 5px;
+.header {
+  display: flex;
+  padding: 20px 0;
+  height: 60px;
+  font-size: 16px;
 }
 
 #timer {
   position: absolute;
-  right: 50px;
-  padding: 5px;
-  font-size: 16px;
-  color: rgb(196, 174, 133);
+  right: 15px;
+  padding: 0 50px 0 0;
+  font-size: 26px;
 }
 
 .correctAns {
@@ -48,26 +42,26 @@ a:hover {
   padding-top: 10px;
 }
 
-.view-high-score {
+.viewHighscore {
   box-sizing: border-box;
   padding-top: 1px;
-  font-size: 16px;
+  font-size: 20px;
 }
 
 .container {
   position: absolute;
-  width: 40%;
-  height: 500px;
+  width: 650px;
+  height: 600px;
   margin: auto;
-  padding: 14px;
-  top: 100px;
-  right: 0px;
+  padding: 10px;
+  top: 267px;
+  right: 0;
   bottom: 0;
   left: 0;
   text-align: center;
-  color: black;
+  color: rgb(90, 60, 4);
   font-weight: bolder;
-  font-size: large;
+  background-color: #ead4b8;
 }
 
 h1 {
@@ -78,7 +72,11 @@ h1 {
 .question h3 {
   font-size: 24px;
 }
-
+.startQuiz {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .start,
 .submitBtn {
   font-weight: bold;
@@ -93,7 +91,7 @@ h1 {
 }
 
 .result,
-.saved-high-score {
+.savedHighScore {
   display: none;
 }
 
@@ -102,6 +100,7 @@ h1 {
 .submitBtn:hover {
   opacity: 0.8;
   border: 2px solid rgb(196, 174, 133);
+  cursor: grab;
 }
 
 .answerButtons {
@@ -110,12 +109,12 @@ h1 {
   margin: 25px 160px 5px 160px;
 }
 
-.alert-user {
+.alertUser {
   font-size: 20px;
   padding: 10px;
 }
 
-.correct-answer {
+.correctAnswer {
   font-size: 18px;
   text-align: center;
   padding-top: 10px;
@@ -133,7 +132,7 @@ h1 {
   padding: 10px;
 }
 
-.user-initial {
+.userInitial {
   font-size: 16px;
   height: 28px;
 }
@@ -161,7 +160,7 @@ h1 {
   margin-top: 10px;
 }
 
-.saved-high-score h1 {
+.savedHighScore h1 {
   padding: 5px;
   color: rgb(196, 174, 133);
   display: block;
@@ -174,7 +173,7 @@ h1 {
 }
 
 #clear,
-#go-back {
+#goBack {
   padding: 10px;
   font-weight: bold;
   background-color: rgb(196, 174, 133);
@@ -183,7 +182,7 @@ h1 {
 }
 
 #clear:hover,
-#go-back:hover {
+#goBack:hover {
   opacity: 0.8;
   border: 2px solid rgb(196, 174, 133);
 }
