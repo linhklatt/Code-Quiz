@@ -1,5 +1,5 @@
 // created variable array questions for the quiz
-var questionArray = [
+var quizArray = [
   {
     showQuestion: "Commonly used data types do not include:",
     answers: ["booleans", "numbers", "strings", "Hyper Text Markup Language"],
@@ -79,7 +79,7 @@ function time() {
 // question function
 function question() {
   questionEl.style.display = "block";
-  var currentQuestion = questionArray[questionIndex];
+  var currentQuestion = quizArray[questionIndex];
   var titleEl = document.querySelector("#questionTitle");
   titleEl.textContent = currentQuestion.showQuestion;
 
@@ -98,7 +98,7 @@ function question() {
 
 // created button click and alert user
 function btnClick() {
-  if (this.value !== questionArray[questionIndex].correctAnswer) {
+  if (this.value !== quizArray[questionIndex].correctAnswer) {
     timeLeft -= 10;
     alertUserEl.textContent = "Wrong!";
   } else {
@@ -107,7 +107,7 @@ function btnClick() {
   }
   questionIndex++;
 
-  if (questionIndex === questionArray.length) {
+  if (questionIndex === quizArray.length) {
     timeLeft = 0;
     alertUserEl.textContent = "Quiz Ended";
     questionEl.style.display = "none";
@@ -125,7 +125,7 @@ function countCorrectAns() {
     "You answered " +
     correctAnsCount +
     " out of " +
-    questionArray.length +
+    quizArray.length +
     " correctly!";
 }
 
